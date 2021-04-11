@@ -31,7 +31,7 @@ cari
 <table class="table table-bordered">
 
 	<tr>
-		<th>No</th>
+	
 		<th>Nim</th>
 		<th>Nama</th>
 		<th>Kelas</th>
@@ -41,12 +41,12 @@ cari
 		<th>Tanggal Lahir</th>
 		<th width="280px">Action</th>
 	</tr>
-	@foreach($posts as $index => $mahasiswa)
+	@foreach($mahasiswa as $index => $mahasiswa)
 	<tr>
-		<td>{{$index + $posts->firstItem()}}</td>
+	
 		<td>{{$mahasiswa->nim}}</td>
 		<td>{{$mahasiswa->nama}}</td>
-		<td>{{$mahasiswa->kelas}}</td>
+		<td>{{$mahasiswa->kelas->nama_kelas}}</td>
 		<td>{{$mahasiswa->jurusan}}</td>
 		<td>{{$mahasiswa->no_handphone}}</td>
 		<td>{{$mahasiswa->email}}</td>
