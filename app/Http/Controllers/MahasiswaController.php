@@ -13,10 +13,10 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa=Mahasiswa::all(); 
+        $mahasiswa=Mahasiswa::with('kelas')->get(); 
         // Mengambil semua isi tabel
-        $posts=Mahasiswa::orderBy('nim','desc')->paginate(1);
-        return view('mahasiswa.index',compact('mahasiswa','posts'))->with('i',(request()->input('page',1)-1)*5);
+        $paginate=Mahasiswa::orderBy('nim','desc')->paginate(1);
+        return view('mahasiswa.index',compact('mahasiswa','paginate'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
