@@ -13,7 +13,7 @@ class CreateMatakuliahmahasiswaTable extends Migration
      */
     public function up()
     {
-         Schema::create('matakuliahmahasiswa', function (Blueprint $table) {
+         Schema::create('mahasiswa_matakuliah', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('mahasiswa_id');
             $table->unsignedBigInteger('matakuliah_id');
